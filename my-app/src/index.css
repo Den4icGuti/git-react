@@ -41,3 +41,7 @@ code {
 .btn:hover {
   background-color: rgb(41, 74, 112);
 }
+
+.done {
+  text-decoration: line-through;
+}

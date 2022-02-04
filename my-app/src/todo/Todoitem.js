@@ -17,13 +17,17 @@ const styles = {
   }
 }
 
- function onTodoItem({todo, index,onChange}) { 
+function onTodoItem({ todo, index, onClick }) { 
+  const clases = [];
+  if (todo.copmleted) { 
+    clases.push('done')
+  }
    return <li style={styles.li}>
-     <span>
+     <span className={clases.join(' ')}>
        <input
-        type="checkbox"
+         type="checkbox"
          style={styles.input}
-         onChange={() => onChange(todo.id)}
+         onClick={() => onClick(todo.id)}
        />
         <strong>{index + 1}</strong>
        &nbsp;
@@ -36,7 +40,7 @@ const styles = {
 onTodoItem.propTypes = {
   todo: PropTypes.object.isRequired,
   index: PropTypes.number,
-  onChange:PropTypes.func.isRequired
+  onClick:PropTypes.func.isRequired
 }
 
 export default onTodoItem

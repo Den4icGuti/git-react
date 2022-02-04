@@ -16,7 +16,7 @@ const styles = {
   return (
     <ul style={styles.ul}>
       {props.todos.map((todo,index) => { 
-        return <TodoItem todo={todo} key={todo.id} index={index}/>
+        return <TodoItem todo={todo} key={todo.id} index={index} onClick={props.onToggle}/>
       })}
     </ul>
   );
@@ -24,6 +24,7 @@ const styles = {
 
 Todolist.propTypes = {
   todos: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onToggle:PropTypes.func.isRequired
 }
 
 export default Todolist
